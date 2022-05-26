@@ -1,0 +1,17 @@
+name: S3Deploy
+
+on: 
+  push:
+    branches:
+      - main
+      - dev
+    workflow_call:
+  #pull_request:
+    #branches:
+      #- main
+      #- dev
+
+jobs:
+  build:
+    uses: bayer-int/wsf-nxt-gen-infra/.github/workflows/master.yml@dev
+    
