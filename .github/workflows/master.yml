@@ -1,15 +1,7 @@
 name: S3Deploy
 
-on: 
-  push:
-    branches:
-      - main
-      - dev
-  on.workflow_call:
-  #pull_request:
-    #branches:
-      #- main
-      #- dev
+on:
+  workflow_call:
 
 jobs:
   build:
