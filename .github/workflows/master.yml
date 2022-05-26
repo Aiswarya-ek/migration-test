@@ -14,9 +14,9 @@ jobs:
         run: |
           echo "Configuring AWS CLI"
           pip install awscli
-          #aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-          #aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-          aws s3 rm s3://test875356/${{github.event.repository.name}} --recursive
+          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+          #aws s3 rm s3://test875356/${{github.event.repository.name}} --recursive
           aws s3 sync ./ s3://test875356/${{github.event.repository.name}} --exclude ".git*" --exclude "*.md*"
         #with:
           #args: --acl bucket-owner-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*' --exclude 'README.md'
