@@ -27,7 +27,7 @@ jobs:
           #aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
           #aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
           pip install boto3 --upgrade
-          cat ~/.aws/credentials
+         
           #export AWS_REGION="eu-central-1"
           aws configure set region eu-central-1
           aws s3 rm s3://test875356/$GITHUB_REPOSITORY --recursive
