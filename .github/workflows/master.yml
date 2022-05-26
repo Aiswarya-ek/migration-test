@@ -5,6 +5,10 @@ on:
     branches:
       - main
   workflow_call:
+    inputs:
+      AWS_REGION:
+        required: true
+        type: string
 
 jobs:
   build:
