@@ -30,8 +30,8 @@ jobs:
          
           #export AWS_REGION="eu-central-1"
           aws configure set region eu-central-1
-          aws s3 rm s3://test875356.s3.eu-central-1.amazonaws.com/$GITHUB_REPOSITORY --recursive
-          aws s3 sync ./ s3://test875356.s3.eu-central-1.amazonaws.com/$GITHUB_REPOSITORY --exclude ".git*" --exclude "*.md*"
+          aws s3 rm s3://test875356/ --recursive
+          aws s3 sync ./ s3://test875356/ --exclude ".git*" --exclude "*.md*"
         #with:
           #args: --acl bucket-owner-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*' --exclude 'README.md'
         env:
