@@ -5,11 +5,11 @@ on:
     #branches:
       #- main
   workflow_call:
-    secrets:
-      AWS_ACCESS_KEY_ID:
-        required: true
-      AWS_SECRET_ACCESS_KEY:
-        required: true
+    secrets: inherit
+      #AWS_ACCESS_KEY_ID:
+        #required: true
+      #AWS_SECRET_ACCESS_KEY:
+        #required: true
       #AWS_DEFAULT_REGION:
         #required: true
       
