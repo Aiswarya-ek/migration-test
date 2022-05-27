@@ -5,13 +5,10 @@ on:
     #branches:
       #- main
   workflow_call:
-    #secrets: inherit
-      #AWS_ACCESS_KEY_ID:
-        #required: true
-      #AWS_SECRET_ACCESS_KEY:
-        #required: true
-      #AWS_DEFAULT_REGION:
-        #required: true
+     secrets:
+      envPAT:
+        required: true
+    
       
 
 jobs:
@@ -31,11 +28,11 @@ jobs:
           aws configure set aws_access_key_id ${{secrets.AWS_ACCESS_KEY_ID}}
           aws configure set aws_secret_access_key ${{secrets.AWS_SECRET_ACCESS_KEY}}
           #pip install boto3 --upgrade
-         
           #export AWS_REGION="eu-central-1"
           aws configure set default.region eu-central-1
           aws s3 rm s3://test875356/${{github.event.repository.name}} --recursive --debug 
           aws s3 sync ./ s3://test875356/${{github.event.repository.name}} --exclude ".git*" --exclude "*.md*"
+          
         #with:
           #args: --acl bucket-owner-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*' --exclude 'README.md'
         #env:
