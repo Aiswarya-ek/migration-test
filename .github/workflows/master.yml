@@ -25,8 +25,8 @@ jobs:
           #unzip awscliv2.zip
           #sudo ./aws/install
           aws --version
-          aws configure set aws_access_key_id ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws configure set aws_secret_access_key ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws configure set aws_access_key_id ${{secrets.envPAT.AWS_ACCESS_KEY_ID}}
+          aws configure set aws_secret_access_key ${{secrets.envPAT.AWS_SECRET_ACCESS_KEY}}
           #pip install boto3 --upgrade
           #export AWS_REGION="eu-central-1"
           aws configure set default.region eu-central-1
