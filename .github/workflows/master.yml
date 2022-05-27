@@ -28,12 +28,12 @@ jobs:
           #unzip awscliv2.zip
           #sudo ./aws/install
           aws --version
-          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+          aws configure set aws_access_key_id ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws configure set aws_secret_access_key ${{secrets.AWS_SECRET_ACCESS_KEY}}
           #pip install boto3 --upgrade
          
           #export AWS_REGION="eu-central-1"
-          aws configure set region eu-central-1
+          aws configure set default.region eu-central-1
           aws s3 rm s3://test875356/${{github.event.repository.name}} --recursive --debug 
           aws s3 sync ./ s3://test875356/${{github.event.repository.name}} --exclude ".git*" --exclude "*.md*"
         #with:
