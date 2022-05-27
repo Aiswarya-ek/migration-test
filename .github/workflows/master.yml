@@ -1,9 +1,9 @@
 name: S3Deploy
 
 on:
-  #push:
-    #branches:
-      #- main
+  push:
+    branches:
+      - main
   workflow_call:
      secrets:
       envPAT:
