@@ -5,10 +5,14 @@ on:
     branches:
       - main
   workflow_call:
-    #inputs:
-      #AWS_REGION:
-        #required: true
-        #type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      AWS_DEFAULT_REGION:
+        required: true
+      
 
 jobs:
   build:
