@@ -25,6 +25,6 @@ jobs:
       - name: S3 Sync
         run: |
           aws --version
-          aws s3 rm s3://${{ secrets.S3_BUCKET }}/${{github.event.repository.name}} --recursive
-          aws s3 sync ./ s3://${{ secrets.S3_BUCKET }}/${{github.event.repository.name}} --exclude ".git*" --exclude "*.md*"
+          aws s3 rm s3://test875356/${{github.event.repository.name}} --recursive
+          aws s3 sync ./ s3://test875356/${{github.event.repository.name}} --exclude ".git*" --exclude "*.md*"
       
